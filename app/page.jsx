@@ -1,5 +1,6 @@
 import React from "react";
 import YouTubeSubscribe from "./component/YouTubeSubscribe";
+import mediaData from "./component/restAPI/mediaData.js"
 export const metadata = {
   title: "Third Man Gaming",
   description:
@@ -225,6 +226,32 @@ return (
                     </span>
                   ))}
                 </div>
+              </div>
+                  <div className="border-t border-zinc-200/80 py-6 dark:border-white/[0.08]">
+                <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-zinc-400 dark:text-zinc-500">
+                  Social Media
+                </p>
+                <div className="mt-3 flex flex-wrap gap-1.5">
+                  {mediaData.map((link) => (
+                    <a
+                      key={link.name}
+                      href={link.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center gap-2 rounded-lg border border-zinc-200/80 bg-zinc-100/50 px-3 py-2 text-[11px] font-medium text-zinc-600 transition hover:bg-zinc-200/50 hover:text-zinc-950 dark:border-white/[0.08] dark:bg-white/[0.03] dark:text-zinc-400 dark:hover:bg-white/[0.06] dark:hover:text-white"
+                    >
+                      <img
+                        src={link.icon}
+                        alt={`${link.name} icon`}
+                        className="h-4 w-4 object-contain"
+                      />
+                    </a>
+                  ))}
+                </div>
+                <p className="mt-2 text-[10px] text-zinc-400 dark:text-zinc-500">
+                  Follow us on social media for updates and exclusive content.
+                </p>
+                
               </div>
               {/* Business Contact */}
               <div className="border-t border-zinc-200/80 py-6 dark:border-white/[0.08]">
@@ -481,14 +508,32 @@ return (
                 <p className="mt-2 text-xs leading-relaxed text-zinc-600 dark:text-zinc-400">
                   Gaming content covering horror, action, indie, puzzle, mobile, racing, and open-world walkthroughs.
                 </p>
-        
+              <div className="mt-3 flex flex-wrap gap-1.5 justify-end">
+                  {mediaData.map((link) => (
+                    <a
+                      key={link.name}
+                      href={link.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center gap-2 rounded-lg border border-zinc-200/80 bg-zinc-100/50 px-3 py-2 text-[11px] font-medium text-zinc-600 transition hover:bg-zinc-200/50 hover:text-zinc-950 dark:border-white/[0.08] dark:bg-white/[0.03] dark:text-zinc-400 dark:hover:bg-white/[0.06] dark:hover:text-white"
+                    >
+                      <img
+                        src={link.icon}
+                        alt={`${link.name} icon`}
+                        className="h-4 w-4 object-contain"
+                      />
+                    </a>
+                  ))}
+                </div>
                 <a
                   href="mailto:thirdman.contact@gmail.com"
                   className="mt-3 block truncate rounded-xl border border-zinc-200/80 bg-zinc-50 px-3 py-2.5 text-xs font-semibold text-zinc-600 transition hover:border-red-500/50 hover:text-red-500 dark:border-white/[0.08] dark:bg-white/[0.03] dark:text-zinc-400 dark:hover:border-red-500/50 dark:hover:text-red-400"
                 >
                   thirdman.contact@gmail.com
                 </a>
+                
               </div>
+              
             </section>
 
             {/* Footer */}
