@@ -143,7 +143,7 @@ return (
           TOP NAVIGATION
       ========================================= */}
       <header className="sticky top-0 z-50 border-b border-zinc-200/80 bg-zinc-50/70 backdrop-blur-xl dark:border-white/[0.08] dark:bg-[#08090d]/70">
-        <div className="mx-auto flex h-16 max-w-[1600px] items-center justify-between px-4 sm:px-6 lg:px-8">
+        <div className="mx-auto flex w-full h-16 max-w-[1600px] items-center justify-between px-4 sm:px-6 lg:px-8">
           
           {/* Logo */}
           <a href="#" className="flex items-center gap-3 group">
