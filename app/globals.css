@@ -5,11 +5,19 @@
   --foreground: #171717;
 }
 
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 80px;
+}
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
+}
+
+@theme {
+  --font-arimo: "Arimo", sans-serif;
 }
 
 @media (prefers-color-scheme: dark) {
