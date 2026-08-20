@@ -1,5 +1,5 @@
 import React from "react";
-
+import YouTubeSubscribe from "./component/YouTubeSubscribe";
 export const metadata = {
   title: "Third Man Gaming",
   description:
@@ -30,9 +30,10 @@ const genres = [
   "🕵️ Mystery",
 ];
 
-async function getChannelVideos() {
   const API_KEY = process.env.YOUTUBE_API_KEY;
   const CHANNEL_ID = process.env.YOUTUBE_CHANNEL_ID;
+
+async function getChannelVideos() {
 
   if (!API_KEY || !CHANNEL_ID) {
     return [];
@@ -93,8 +94,7 @@ async function getChannelVideos() {
 }
 
 async function getChannelInfo() {
-  const API_KEY = process.env.YOUTUBE_API_KEY;
-  const CHANNEL_ID = process.env.YOUTUBE_CHANNEL_ID;
+
 
   if (!API_KEY || !CHANNEL_ID) {
     return null;
@@ -109,11 +109,6 @@ async function getChannelInfo() {
 
     const res = await fetch(
       `https://www.googleapis.com/youtube/v3/channels?${params.toString()}`,
-      {
-        next: {
-          revalidate: 3600,
-        },
-      }
     );
 
     if (!res.ok) {
@@ -185,15 +180,7 @@ return (
 
           {/* Actions */}
           <div className="flex items-center gap-3">
-            <a
-              href="https://www.youtube.com/@thirdmangaming"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 rounded-xl bg-red-600 px-4 py-2 text-xs font-bold text-white shadow-lg shadow-red-600/25 transition-all hover:bg-red-500 hover:shadow-red-500/35 active:scale-95"
-            >
-              <span>Subscribe</span>
-              <span className="text-xs">→</span>
-            </a>
+           <YouTubeSubscribe CHANNEL_ID={CHANNEL_ID} />
           </div>
         </div>
       </header>
