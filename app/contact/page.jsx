@@ -43,7 +43,7 @@ const Page = () => {
         throw new Error(result.error || "Failed to send message.");
       }
 
-      setStatus("Message sent successfully!");
+      setStatus("Thanks for your message!");
       form.reset();
     } catch (error) {
       console.error(error);
