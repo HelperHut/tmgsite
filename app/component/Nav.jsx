@@ -10,7 +10,7 @@ const page = [
   { name: "Home", href: "/" },
   { name: "PlayList", href: "/playlist" },
   { name: "FQA", href: "/fqa" },
-  { name: "Contact", href: "/Contact" },
+  { name: "Contact", href: "/contact" },
 ];
 
 const Nav = () => {
