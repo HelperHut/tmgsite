@@ -187,7 +187,7 @@ const Page = () => {
       {status && (
         <p
           className={`rounded-xl px-4 py-3 text-sm font-medium ${
-            status.includes("successfully")
+            status.includes("Thanks")
               ? "bg-green-500/10 text-green-600 dark:text-green-400"
               : "bg-red-500/10 text-red-600 dark:text-red-400"
           }`}
