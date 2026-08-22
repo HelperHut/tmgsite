@@ -54,7 +54,7 @@ const Page = () => {
   };
 
   return (
-    <main className="min-h-screen bg-zinc-50 px-4 py-12 text-zinc-900 dark:bg-[#08090d] dark:text-white">
+    <main className="min-h-screen bg-zinc-50 py-12 text-zinc-900 dark:bg-[#08090d] dark:text-white">
       <div className="mx-auto w-full max-w-5xl">
 
         {/* Header */}
@@ -81,7 +81,7 @@ const Page = () => {
       rounded-3xl
       border border-zinc-200/80
       bg-white/70
-      p-6
+      p-5
       shadow-sm
       backdrop-blur-xl
       dark:border-white/[0.08]
