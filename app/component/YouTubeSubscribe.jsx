@@ -1,27 +1,16 @@
 "use client";
 
-import Script from "next/script";
-
-export default function YouTubeSubscribe({ CHANNEL_ID }) {
-  if (!CHANNEL_ID) {
-    return null;
-  }
+export default function YouTubeSubscribe({ id }) {
+console.log(id);
 
   return (
-    <>
-      <Script
-        src="https://apis.google.com/js/platform.js"
-        strategy="afterInteractive"
-      />
-
-      <div suppressHydrationWarning>
-        <div
-          className="g-ytsubscribe"
-          data-channelid={CHANNEL_ID}
-          data-layout="default"
-          data-count="default"
-        />
-      </div>
-    </>
+    <a
+      href={`https://www.youtube.com/channel/${id}?sub_confirmation=1`}
+      target="_blank"
+      rel="noopener noreferrer"
+      className="inline-flex rounded-lg bg-red-600 px-4 py-2 text-sm font-semibold text-white"
+    >
+      Subscribe
+    </a>
   );
 }
