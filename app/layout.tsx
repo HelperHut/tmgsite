@@ -2,27 +2,15 @@ import type { Metadata } from "next";
 import { Arimo } from "next/font/google";
 import "./globals.css";
 import Nav from "./component/Nav" 
-import mediaData from "./component/restAPI/mediaData.js"
-
+import {Genres , Links , Email , About} from "./component/restAPI/media.js"
 const arimo = Arimo({
   subsets: ["latin"],
   variable: "--font-arimo",
 });
 
-const genres = [
-  "🎮 Indie",
-  "😱 Horror",
-  "🔫 Action",
-  "🧩 Puzzle",
-  "🌍 Open World",
-  "📱 Mobile",
-  "🏎️ Racing",
-  "🕵️ Mystery",
-];
 export const metadata: Metadata = {
-  title: "Third Man Gaming",
-  description:
-    "Third Man Gaming — Horror, Action, Indie, Puzzle and Open World gameplay.",
+  title: process.env.MATA_DATA_TITTLE,
+  description: process.env.MATA_DATA_DESCRIPTION
 };
 
 export default function RootLayout({
@@ -62,7 +50,7 @@ export default function RootLayout({
                           About
                         </p>
                         <p className="mt-2 text-xs leading-relaxed text-zinc-600 dark:text-zinc-400">
-                          Welcome to <span className="font-semibold text-zinc-900 dark:text-white">Third Man Gaming</span>. Dedicated to bringing you immersive horror, action, indie, and open-world gameplay walkthroughs.
+                         {About} 
                         </p>
                       </div>
         {/* Categories */}
@@ -71,7 +59,7 @@ export default function RootLayout({
                           Categories
                         </p>
                         <div className="mt-3 flex flex-wrap gap-1.5">
-                          {genres.map((genre) => (
+                          {Genres.map((genre) => (
                             <span
                               key={genre}
                               className="rounded-lg border border-zinc-200/80 bg-zinc-100/50 px-2.5 py-1 text-[11px] font-medium text-zinc-600 dark:border-white/[0.08] dark:bg-white/[0.03] dark:text-zinc-400"
@@ -86,7 +74,7 @@ export default function RootLayout({
                           Social Media
                         </p>
                         <div className="mt-3 flex flex-wrap gap-1.5">
-                          {mediaData.map((link) => (
+                          {Links.map((link) => (
                             <a
                               key={link.name}
                               href={link.url}
@@ -113,10 +101,10 @@ export default function RootLayout({
                           Business Contact
                         </p>
                         <a
-                          href="mailto:thirdman.contact@gmail.com"
+                          href={`mailto:${Email}`}
                           className="mt-3 block truncate rounded-xl border border-zinc-200/80 bg-zinc-50 px-3 py-2.5 text-xs font-semibold text-zinc-600 transition hover:border-red-500/50 hover:text-red-500 dark:border-white/[0.08] dark:bg-white/[0.03] dark:text-zinc-400 dark:hover:border-red-500/50 dark:hover:text-red-400"
                         >
-                          thirdman.contact@gmail.com
+                          {Email}
                         </a>
                       </div>
                     </div>
@@ -135,7 +123,7 @@ export default function RootLayout({
                           Gaming content covering horror, action, indie, puzzle, mobile, racing, and open-world walkthroughs.
                         </p>
                       <div className="mt-3 flex flex-wrap gap-1.5 justify-end">
-                          {mediaData.map((link) => (
+                          {Links.map((link) => (
                             <a
                               key={link.name}
                               href={link.url}
@@ -152,10 +140,10 @@ export default function RootLayout({
                           ))}
                         </div>
                         <a
-                          href="mailto:thirdman.contact@gmail.com"
+                          href={`mailto:${Email}`}
                           className="mt-3 block truncate rounded-xl border border-zinc-200/80 bg-zinc-50 px-3 py-2.5 text-xs font-semibold text-zinc-600 transition hover:border-red-500/50 hover:text-red-500 dark:border-white/[0.08] dark:bg-white/[0.03] dark:text-zinc-400 dark:hover:border-red-500/50 dark:hover:text-red-400"
                         >
-                          thirdman.contact@gmail.com
+                          {Email}
                         </a>
                         
                       </div>
