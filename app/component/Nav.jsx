@@ -9,6 +9,7 @@ import YouTubeSubscribe from "./YouTubeSubscribe"
 const page = [
   { name: "Home", href: "/" },
   { name: "PlayList", href: "/playlist" },
+  { name: "Blogs", href: "/blogs" },
   { name: "FQA", href: "/fqa" },
   { name: "Contact", href: "/contact" },
 ];
